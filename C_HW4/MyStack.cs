@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace C_HW4
 {
-    public class Mystack <T> where T
+    public class Mystack <T> where T: class
     {
         private Stack<T> stack = new Stack<T>();
 

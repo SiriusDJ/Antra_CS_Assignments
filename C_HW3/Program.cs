@@ -29,12 +29,45 @@ using System.Text;
 
 //Working with methods
 //1.
-/*int[] array = new int[10] {1,2,3,4,5,6,7,8,9,10};
-foreach (int i in array)
+int[] array = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+foreach (int i in ReverseNumbers.Reverse(array))
 {
     Console.WriteLine(i);
 }
-*/
+
+Console.WriteLine("----");
+
+//2.Fibonacci
+int a = 1;
+int b = 1;
+// get the list up to 10th number
+for(int i = 2; i < 10; i++)
+{
+    Console.Write(Fibonacci.GetFibonacci(i));
+    Console.Write(",");
+}
+
+
+Console.WriteLine("----");
+
+//7. Balls
+Ball ballRed = new Ball(3, new Color(255, 0, 0));
+Ball ballGreen = new Ball(6, new Color(0, 255, 0));
+Ball ballBlue = new Ball(9, new Color(0, 0, 255));
+
+ballRed.Throwing();
+Console.WriteLine($"The red ball is thrown {ballRed.GetThrow()} times.");
+;
+
+ballGreen.Throwing();
+ballGreen.Throwing();
+Console.WriteLine($"The green ball is thrown {ballGreen.GetThrow()} times.");
+
+ballBlue.Throwing();
+Console.WriteLine($"The blue ball has been thown {ballBlue.GetThrow()} times.");
+ballBlue.Pop();
+ballBlue.Throwing();
+Console.WriteLine($"The blue ball has been thown {ballBlue.GetThrow()} times.");
 
 //2
 /*Bird b = new Bird();
@@ -42,18 +75,3 @@ b.Weight = 3;
 Console.WriteLine(b.Weight);*/
 
 
-class TestClass
-{
-    static void Main(string[] args)
-    {
-        Color j = new Color(1, 2, 3);
-        Color k = new Color(5, 2, 3);
-        Ball g = new Ball(5, j, 1);
-        Ball h = new Ball(6, k, 3);
-        g.Throwing();
-        h.Pop();
-        h.Throwing();
-        Console.WriteLine(g.Getthrow());
-        Console.WriteLine(h.Getthrow());
-    }
-}
