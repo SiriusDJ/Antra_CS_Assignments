@@ -6,26 +6,21 @@ using System.Threading.Tasks;
 
 namespace C_HW3.Design_OOP.Entities
 {
-    public class Instructor : IInstructorService, IPersonService
+    public class Instructor : Person, IInstructorService
     {
+        private int SalaryMultiplier { get; set; }
+        private DateTime JoinDate { get; set; }
         public decimal BonusSalary()
         {
-            throw new NotImplementedException();
+            DateTime thisDay = DateTime.Today;
+            return (thisDay.Year - JoinDate.Year) * SalaryMultiplier;
         }
 
-        public decimal CalculateSalary()
+        public override decimal CalculateSalary()
         {
-            throw new NotImplementedException();
+
+            return BonusSalary() + 100;
         }
 
-        public List<string> GetAddresses()
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetAge()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

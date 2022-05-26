@@ -6,17 +6,27 @@ using System.Threading.Tasks;
 
 namespace C_HW3.Design_OOP.Entities
 {
-    public class Student : IStudentService
+    public class Student : Person, IStudentService
     {
+        private List<Course> CourseList { set; get; }
+   
+        
 
         public double CalculateGPA()
         {
             throw new NotImplementedException();
         }
 
-        public List<string> GetGrades()
+        public List<Course> GetCourses()
         {
-            throw new NotImplementedException();
+            return CourseList;
         }
+
+        public override decimal CalculateSalary()
+        {
+            return 0;
+        }
+
+
     }
 }
